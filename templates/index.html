@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Analyzer</title>
+    <link rel="stylesheet" href="/static/style.css"> <!-- Corrected path -->
+</head>
+<body>
+    <div class="container">
+        <h1>Upload Your Resume</h1>
+        <form action="/upload" method="post" enctype="multipart/form-data">
+            <label for="file">Resume (PDF):</label>
+            <input type="file" name="file" accept=".pdf" required>
+            
+            <label for="domain">Select Your Domain:</label>
+            <select name="domain" required>
+                <option value="Web Development">Web Development</option>
+                <option value="Data Science">Data Science</option>
+                <option value="Mobile Development">Mobile Development</option>
+                <option value="DevOps">DevOps</option>
+                <option value="Cloud Computing">Cloud Computing</option>
+                <option value="Game Development">Game Development</option>
+                <option value="UI/UX Design">UI/UX Design</option>
+                <option value="Machine Learning">Machine Learning</option>
+                <option value="Cybersecurity">Cybersecurity</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <button type="submit">Analyze</button>
+        </form>
+    </div>
+</body>
+</html>

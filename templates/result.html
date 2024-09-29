@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis Result</title>
+    <link rel="stylesheet" href="/static/style.css"> <!-- Corrected path -->
+</head>
+<body>
+    <div class="container">
+        <h1>Resume Analysis Result</h1>
+        
+        <h2>Matched Skills:</h2>
+        <ul>
+            {% for skill in result.matched_skills %}
+                <li>{{ skill }}</li>
+            {% endfor %}
+        </ul>
+
+        <h2>Missing Skills:</h2>
+        <ul>
+            {% for skill in result.missing_skills %}
+                <li>{{ skill }}</li>
+            {% endfor %}
+        </ul>
+
+        <h2>Suggestions:</h2>
+        <ul>
+            {% for skill, suggestion in result.suggestions.items() %}
+                <li>{{ suggestion }}</li>
+            {% endfor %}
+        </ul>
+
+        <h2>Recommended Courses:</h2>
+        <ul>
+            {% for skill, course in result.recommended_courses.items() %}
+                <li>{{ skill }}: <a href="{{ course }}">{{ course }}</a></li>
+            {% endfor %}
+        </ul>
+
+        <h2>Resume Score:</h2>
+        <p class="score">{{ result.resume_score }}%</p>
+
+        <a class="button" href="/">Upload another resume</a>
+    </div>
+</body>
+</html>
